@@ -1,0 +1,61 @@
+.controller {
+    position: fixed;
+    right: 22px;
+    bottom: 27px;
+    width: 280px;
+    border-radius: 10px;
+    padding: 5px 12px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    background: #fff;
+}
+
+.music_info {
+    display: flex;
+    align-items: center;
+}
+
+.thumbnail_mini {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 100%;
+    margin: 0 12px 0 2px;
+}
+
+.is_spin {
+    animation: spin 5s infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.title {
+    font-size: 18px;
+    color: var(--color-text-80);
+}
+
+.button_wrapper {
+    width: 115px;
+    padding: 0 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    background: none;
+    border: none;
+    font-size: 19px;
+}
+
+.button .icon {
+    color: var(--color-text-90);
+}

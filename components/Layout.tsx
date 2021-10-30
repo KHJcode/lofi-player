@@ -1,4 +1,6 @@
 import React from 'react';
+import Header from "./Header";
+import styles from '../styles/layout-component.module.css';
 
 interface Props {
     children: React.ReactNode;
@@ -6,11 +8,11 @@ interface Props {
 
 const Layout: React.FC<Props> = ({ children }) => {
     return (
-        <div>
-            <header></header>
-            <main>{children}</main>
+        <>
+            <Header />
+            <main className={styles.main}>{children}</main>
             <footer></footer>
-        </div>
+        </>
     );
 };
 
