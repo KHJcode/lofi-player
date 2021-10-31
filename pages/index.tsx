@@ -1,87 +1,27 @@
-import Layout from '../components/Layout';
-import styles from '../styles/home.module.css';
-
-import type { NextPage } from 'next';
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Layout from "../components/Layout";
+import styles from "../styles/home.module.css";
 import MusicList from "../components/MusicList";
-import {IMusicItem} from "../types/music";
 
-const dummyData: IMusicItem[] = [
-    {
-        id: 'fdafdafaf',
-        title: 'Valley',
-        thumbnail: 'https://images.unsplash.com/photo-1634151296366-6951d7b079b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1331&q=80',
-    },
-    {
-        id: 'fdafdafaf',
-        title: 'Valley',
-        thumbnail: 'https://images.unsplash.com/photo-1634151296366-6951d7b079b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1331&q=80',
-    },
-    {
-        id: 'fdafdafaf',
-        title: 'Valley',
-        thumbnail: 'https://images.unsplash.com/photo-1634151296366-6951d7b079b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1331&q=80',
-    },
-    {
-        id: 'fdafdafaf',
-        title: 'Valley',
-        thumbnail: 'https://images.unsplash.com/photo-1634151296366-6951d7b079b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1331&q=80',
-    },
-    {
-        id: 'fdafdafaf',
-        title: 'Valley',
-        thumbnail: 'https://images.unsplash.com/photo-1634151296366-6951d7b079b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1331&q=80',
-    },
-    {
-        id: 'fdafdafaf',
-        title: 'Valley',
-        thumbnail: 'https://images.unsplash.com/photo-1634151296366-6951d7b079b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1331&q=80',
-    },    {
-        id: 'fdafdafaf',
-        title: 'Valley',
-        thumbnail: 'https://images.unsplash.com/photo-1634151296366-6951d7b079b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1331&q=80',
-    },    {
-        id: 'fdafdafaf',
-        title: 'Valley',
-        thumbnail: 'https://images.unsplash.com/photo-1634151296366-6951d7b079b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1331&q=80',
-    },    {
-        id: 'fdafdafaf',
-        title: 'Valley',
-        thumbnail: 'https://images.unsplash.com/photo-1634151296366-6951d7b079b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1331&q=80',
-    },    {
-        id: 'fdafdafaf',
-        title: 'Valley',
-        thumbnail: 'https://images.unsplash.com/photo-1634151296366-6951d7b079b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1331&q=80',
-    },    {
-        id: 'fdafdafaf',
-        title: 'Valley',
-        thumbnail: 'https://images.unsplash.com/photo-1634151296366-6951d7b079b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1331&q=80',
-    },    {
-        id: 'fdafdafaf',
-        title: 'Valley',
-        thumbnail: 'https://images.unsplash.com/photo-1634151296366-6951d7b079b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1331&q=80',
-    },    {
-        id: 'fdafdafaf',
-        title: 'Valley',
-        thumbnail: 'https://images.unsplash.com/photo-1634151296366-6951d7b079b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1331&q=80',
-    },    {
-        id: 'fdafdafaf',
-        title: 'Valley',
-        thumbnail: 'https://images.unsplash.com/photo-1634151296366-6951d7b079b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1331&q=80',
-    },
-
-
-];
+import type { NextPage } from "next";
+import type { IMusic } from "../types/music";
 
 const Home: NextPage = () => {
+  const [musics, setMusics] = useState<IMusic[]>([]);
+
+  useEffect(() => {
+    (async () => {
+      const { data } = (await axios.get("/api/music")) as any;
+      if (data.length) setMusics(data);
+    })();
+  }, []);
+
   return (
     <Layout>
-      <div className={styles.background_wrapper}>
-          <div>
-              <div className={styles.recommend_music}>
-
-              </div>
-              <MusicList musics={dummyData} />
-          </div>
+      <div>
+        <div className={styles.recommend_music}></div>
+        <MusicList musics={musics} />
       </div>
     </Layout>
   );

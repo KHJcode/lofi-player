@@ -1,9 +1,5 @@
-export interface IMusicItem {
-    readonly id: string;
-    readonly title: string;
-    readonly thumbnail: string;
-}
-
-export interface IMusic extends IMusicItem {
-    readonly author: string;
+export interface IMusic {
+    id: string;
+    title: string;
+    author: string;
 }
