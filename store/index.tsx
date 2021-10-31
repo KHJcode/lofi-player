@@ -18,7 +18,6 @@ const Container: React.FC<Props> = ({ children }) => {
       value={{ isPlay, setIsPlay, music, setMusic, isPause, setIsPause }}
     >
       {children}
-      {isPlay && <Controller />}
       {isPlay && (
         <iframe
           style={{ display: "none" }}
