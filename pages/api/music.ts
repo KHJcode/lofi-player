@@ -5,7 +5,7 @@ import type { IMusic } from '../../types/music';
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<IMusic[] | IMusic>
+  res: NextApiResponse<IMusic[] | IMusic | null>
 ) {
   if (req.method === 'GET') {
     const musicId = req.query?.id;
@@ -14,6 +14,7 @@ export default function handler(
         if (id === musicId) {
           return res.status(200).json({ id, ...music });
         }
+        return res.status(200).json(null);
       }
     }
     res.status(200).json(musics);
