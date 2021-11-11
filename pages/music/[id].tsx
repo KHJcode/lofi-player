@@ -17,7 +17,6 @@ const Music: React.FC = () => {
 
   useEffect(() => {
     if (id) {
-      console.log(id);
       setIsPlay(true);
       (async () => {
         const data = (await axios.get(`/api/music?id=${id}`))?.data;
@@ -40,7 +39,7 @@ const Music: React.FC = () => {
           <div>
             <div
               className={styles.thumbnail}
-              style={{ background: `url('${thumbnailLink(id)}')` }}
+              style={{ background: `url('${thumbnailLink(id as string)}')` }}
             >
               <div className={styles.dot}></div>
             </div>
