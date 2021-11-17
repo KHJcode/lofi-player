@@ -8,6 +8,7 @@ import { Context } from "../store";
 
 import type { NextPage } from "next";
 import type { IMusic } from "../types/music";
+import Carousel from "../components/Carousel";
 
 const Home: NextPage = () => {
   const [musics, setMusics] = useState<IMusic[]>([]);
@@ -22,6 +23,7 @@ const Home: NextPage = () => {
 
   return (
     <Layout>
+      <Carousel />
       <div>
         <div className={styles.recommend_music}></div>
         <MusicList musics={musics} />

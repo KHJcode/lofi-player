@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import "react-circular-progressbar/dist/styles.css";
 import Layout from "../../components/Layout";
 import styles from "../../styles/music-page.module.css";
 import { useRouter } from "next/router";

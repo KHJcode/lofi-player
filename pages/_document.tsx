@@ -38,6 +38,12 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
           <script src={"https://www.youtube.com/iframe_api"}></script>
+          <script src="https://unpkg.com/type-hangul"></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `TypeHangul.type('#recommend_text', { intervalType: 90, humanize: 0.5 })`,
+            }}
+          ></script>
         </body>
       </Html>
     );
