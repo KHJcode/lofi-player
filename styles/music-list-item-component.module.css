@@ -15,9 +15,12 @@
 
 .item_box:hover,
 .item_box:hover > .thumbnail,
-.item_box:hover > .icon
+.item_box:hover > .icon,
+.on_hover,
+.on_hover > .thumbnail,
+.on_hover > .icon
 {
-    border-radius: 100%;
+    border-radius: 100% !important;
 }
 
 .item_box,
@@ -33,7 +36,8 @@
     object-fit: cover;
 }
 
-.item_box:hover > .icon {
+.item_box:hover > .icon,
+.on_hover > .icon {
     opacity: 1;
 }
 

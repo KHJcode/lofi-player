@@ -1,16 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import classNames from "classnames";
-import Link from 'next/link';
+import Link from "next/link";
 import styles from "../styles/music-list-item-component.module.css";
 import { IMusic } from "../types/music";
 import { thumbnailLink } from "../constant/url";
+import { Context } from "../store";
 
 const MusicListItem: React.FC<IMusic> = ({ id, title }) => {
+  const { music } = useContext(Context) as any;
+  const currentId = music?.id;
   return (
     <Link href={`/music/${id}`}>
       <a>
         <div className={styles.item_wrapper}>
-          <div className={styles.item_box}>
+          <div
+            className={classNames(
+              styles.item_box,
+              id === currentId ? styles.on_hover : ""
+            )}
+          >
             <img
               className={styles.thumbnail}
               src={thumbnailLink(id)}

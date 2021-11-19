@@ -14,7 +14,7 @@
   background-blend-mode: darken;
   border-radius: 5px;
   background-position: 50% 50% !important;
-  padding: 45px;
+  padding: 40px;
   text-align: left;
 }
 
@@ -33,8 +33,8 @@
 
 .moving_text_wrapper {
   position: relative;
-  left: 88%;
-  top: 110px;
+  left: 87%;
+  top: 115px;
   user-select: none !important;
 }
 
