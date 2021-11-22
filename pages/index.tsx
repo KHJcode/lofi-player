@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import Layout from "../components/Layout";
 import styles from "../styles/home.module.css";
 import MusicList from "../components/MusicList";
@@ -9,6 +9,7 @@ import { Context } from "../store";
 import type { NextPage } from "next";
 import type { IMusic } from "../types/music";
 import Carousel from "../components/Carousel";
+import { findMusics } from "../service/music";
 
 const Home: NextPage = () => {
   const [musics, setMusics] = useState<IMusic[]>([]);
@@ -16,7 +17,8 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     (async () => {
-      const { data } = (await axios.get("/api/music")) as any;
+      // const { data } = (await axios.get("/api/music")) as any;
+      const data = findMusics();
       if (data.length) setMusics(data);
     })();
   }, []);
@@ -24,8 +26,7 @@ const Home: NextPage = () => {
   return (
     <Layout>
       <Carousel />
-      <div>
-        <div className={styles.recommend_music}></div>
+      <div className={styles.list_wrapper}>
         <MusicList musics={musics} />
       </div>
       {isPlay && <Controller />}

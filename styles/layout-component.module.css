@@ -1,6 +1,6 @@
 .main {
-    padding: 100px 0 0;
-    width: 100vw;
+    padding: 100px 0 70px;
+    width: calc(100vw - 17px);
     overflow-x: hidden;
     min-height: 100vh;
     background: #f7fafc;

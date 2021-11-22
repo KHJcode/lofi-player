@@ -4,7 +4,6 @@ import styles from "../../styles/music-page.module.css";
 import { useRouter } from "next/router";
 import { thumbnailLink } from "../../constant/url";
 import { Context } from "../../store/index";
-import type { IMusic } from "../../types/music";
 import axios from "axios";
 import classNames from "classnames";
 
