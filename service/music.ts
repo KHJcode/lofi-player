@@ -3,9 +3,9 @@ import type { IMusic } from "../types/music";
 
 export function findMusics(): IMusic[] {
   const length = musics.length;
-  let i, j, newMusics = musics;
-  for (i = 0; i < length; i++) {
-    for (j = 0; j < length; j++) {
+  let newMusics = musics;
+  for (let i = 0; i < length; i++) {
+    for (let j = 0; j < length; j++) {
       if (i == j) continue;
       const random = Math.round(Math.random());
       if (random) {
