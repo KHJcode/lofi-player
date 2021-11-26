@@ -5,7 +5,6 @@ import styles from "../styles/home.module.css";
 import MusicList from "../components/MusicList";
 import Controller from "../components/Controller";
 import { Context } from "../store";
-
 import type { NextPage } from "next";
 import type { IMusic } from "../types/music";
 import Carousel from "../components/Carousel";

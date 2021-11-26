@@ -15,34 +15,15 @@ const Controller: React.FC = () => {
   }, [isPlay]);
 
   return (
-    <div className={styles.controller}>
-      <div className={styles.music_info}>
-        <img
+    <div className={styles.controller} style={{ background: `url('${thumbnailLink(music?.id)}')` }}>
+      <button className={styles.button} onClick={handleClickPlayButton}>
+        <i
           className={classNames(
-            styles.thumbnail_mini,
-            isPlay ? styles.is_spin : ""
+            isPlay ? "fas fa-pause" : "fas fa-play",
+            styles.icon
           )}
-          src={thumbnailLink(music?.id)}
-          alt={music?.title}
         />
-        <h6 className={classNames(styles.title, "font-nunito")}>{music?.title}</h6>
-      </div>
-      <div className={styles.button_wrapper}>
-        <button className={styles.button}>
-          <i className={classNames("fas fa-backward", styles.icon)} />
-        </button>
-        <button className={styles.button} onClick={handleClickPlayButton}>
-          <i
-            className={classNames(
-              isPlay ? "fas fa-pause" : "fas fa-play",
-              styles.icon
-            )}
-          />
-        </button>
-        <button className={styles.button}>
-          <i className={classNames("fas fa-forward", styles.icon)} />
-        </button>
-      </div>
+      </button>
     </div>
   );
 };

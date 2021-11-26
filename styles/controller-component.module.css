@@ -1,64 +1,28 @@
 .controller {
     position: fixed;
-    right: 22px;
-    bottom: 27px;
-    width: 300px;
-    border-radius: 10px;
-    padding: 5px 12px;
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-    background: #fff;
-}
-
-.music_info {
-    display: flex;
-    align-items: center;
-}
-
-.thumbnail_mini {
-    width: 30px;
-    height: 30px;
-    object-fit: cover;
+    right: 25px;
+    bottom: 25px;
+    width: 70px;
+    height: 70px;
     border-radius: 100%;
-    margin: 0 12px 0 2px;
-}
-
-.is_spin {
-    animation: rotate 10s linear infinite;
-    transform-origin: 50% 50%;
-}
-
-@keyframes rotate {
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-.title {
-    font-size: 18px;
-    color: var(--color-text-80);
-    width: 100px;
-    word-break: break-word;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.button_wrapper {
-    width: 115px;
-    padding: 0 10px 0 0;
-    display: flex;
-    justify-content: space-between;
+    padding: 5px 12px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    background-size: cover !important;
+    background-color: rgba(0, 0, 0, .45) !important;
+    background-blend-mode: multiply !important;
 }
 
 .button {
+    width: 100%;
+    height: 100%;
     background: none;
     border: none;
-    font-size: 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button .icon {
-    color: var(--color-text-90);
+    font-size: 23px;
+    color: var(--color-text-5);
 }
