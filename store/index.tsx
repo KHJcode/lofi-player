@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Controller from "../components/Controller";
 import type { IMusic } from "../types/music";
 
@@ -12,26 +12,28 @@ const Container: React.FC<Props> = ({ children }) => {
   const [isPlay, setIsPlay] = useState<boolean>(false);
   const [music, setMusic] = useState<IMusic>();
 
-  const clickVideoTag = useCallback(() => {
-    const iframe = document.querySelector('#player') as any;
-    if (iframe) {
-      if (!isPlay) {
-        iframe?.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-      } else {
-        iframe?.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+  useEffect(() => {
+    if (music) {
+      const iframe = document.querySelector("#player") as any;
+      if (iframe) {
+        console.log("click" + isPlay);
+        if (isPlay) {
+          iframe?.contentWindow.postMessage(
+            '{"event":"command","func":"playVideo","args":""}',
+            "*"
+          );
+        } else {
+          iframe?.contentWindow.postMessage(
+            '{"event":"command","func":"pauseVideo","args":""}',
+            "*"
+          );
+        }
       }
     }
   }, [isPlay]);
 
-  useEffect(() => clickVideoTag(), [isPlay]);
-  useEffect(() => {
-    if (music) setIsPlay(true);
-  }, [music]);
-
   return (
-    <Context.Provider
-      value={{ isPlay, setIsPlay, music, setMusic }}
-    >
+    <Context.Provider value={{ isPlay, setIsPlay, music, setMusic }}>
       {children}
       {music && (
         <iframe

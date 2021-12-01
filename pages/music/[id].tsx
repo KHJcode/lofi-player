@@ -4,36 +4,33 @@ import styles from "../../styles/music-page.module.css";
 import { useRouter } from "next/router";
 import { thumbnailLink } from "../../constant/url";
 import { Context } from "../../store/index";
-import axios from "axios";
+// import axios from "axios";
 import classNames from "classnames";
+import { GetServerSideProps } from "next";
+import { findMusicById } from "../../service/music";
 
-const Music: React.FC = () => {
+const Music: React.FC<{ id: string }> = ({ id }) => {
   const router = useRouter();
-  const [id, setId] = useState<string>();
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const { music, setMusic, setIsPlay } = useContext(Context) as any;
 
   useEffect(() => {
+    console.log(id);
     if (id) {
-      setIsPlay(true);
-      (async () => {
-        const data = (await axios.get(`/api/music?id=${id}`))?.data;
-        if (data) {
-          setMusic(data);
-          setIsLoading(true);
-        } else router.push("/404");
-      })();
+      // const data = (await axios.get(`/api/music?id=${id}`))?.data;
+      const data = findMusicById(id);
+      if (data) {
+        setMusic(data);
+        setIsLoaded(true);
+        setIsPlay(true);
+      } else router.push("/404");
     }
   }, [id]);
-
-  useEffect(() => {
-    setId((router as any)?.query?.id);
-  }, []);
 
   return (
     <Layout>
       <div className={styles.music_page_wrapper}>
-        {isLoading && (
+        {isLoaded && (
           <div>
             <div
               className={styles.thumbnail}
@@ -58,6 +55,16 @@ const Music: React.FC = () => {
       </div>
     </Layout>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { id } = context.query;
+
+  return {
+    props: {
+      id,
+    },
+  };
 };
 
 export default Music;
