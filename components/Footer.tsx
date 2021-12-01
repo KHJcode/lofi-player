@@ -10,13 +10,16 @@ const Footer: React.FC = () => {
       </div>
       <ul className={styles.links_wrapper}>
         <li>
-          <a className={classNames("fab fa-instagram", styles.icon)} />
+          <a href={"https://www.instagram.com/khjcode"} target={"_blank"} rel={"noreferrer"}
+             className={classNames("fab fa-instagram", styles.icon)}/>
         </li>
         <li>
-          <a className={classNames("fab fa-github", styles.icon)} />
+          <a href={"https://github.com/KHJcode"} target={"_blank"} rel={"noreferrer"}
+             className={classNames("fab fa-github", styles.icon)}/>
         </li>
         <li>
-          <a className={classNames("far fa-envelope", styles.icon)} />
+          <a href={"mailto:to@khjcode.com"} target={"_blank"} rel={"noreferrer"}
+             className={classNames("far fa-envelope", styles.icon)}/>
         </li>
       </ul>
     </footer>

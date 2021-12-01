@@ -59,7 +59,6 @@ const Music: React.FC<{ id: string }> = ({ id }) => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id } = context.query;
-
   return {
     props: {
       id,

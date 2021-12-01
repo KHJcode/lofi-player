@@ -34,6 +34,7 @@
     background: none;
     border: none;
     font-size: 14px;
+    padding: 0 10px 0 0;
     width: 100%;
     letter-spacing: .2px;
     color: var(--color-text-100);
