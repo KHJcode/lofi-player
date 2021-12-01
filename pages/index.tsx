@@ -9,6 +9,8 @@ import type { NextPage } from "next";
 import type { IMusic } from "../types/music";
 import Carousel from "../components/Carousel";
 import { findMusics } from "../service/music";
+import Head from "next/head";
+import {FRONTEND_URL} from "../constant/url";
 
 const Home: NextPage = () => {
   const [musics, setMusics] = useState<IMusic[]>([]);
@@ -22,14 +24,33 @@ const Home: NextPage = () => {
     })();
   }, []);
 
+  const TITLE = "KHJcode Lofi";
+  const DESCRIPTION = "Play lofi music from youtube on website.";
+  const OG_IMAGE = `${FRONTEND_URL}/og-image.jpg`;
+
   return (
-    <Layout>
-      <Carousel />
-      <div className={styles.list_wrapper}>
-        <MusicList musics={musics} />
-      </div>
-      {isPlay && <Controller />}
-    </Layout>
+    <>
+      <Head>
+        <title>{TITLE}</title>
+
+        <meta name={"description"} content={DESCRIPTION} />
+        <meta name="url" content={FRONTEND_URL} />
+
+        <meta property="og:title" content={TITLE} />
+        <meta property="og:description" content={DESCRIPTION} />
+        <meta property="og:image" content={OG_IMAGE} />
+        <meta property="og:url" content={FRONTEND_URL} />
+
+        <link rel="canonical" href={FRONTEND_URL} />
+      </Head>
+      <Layout>
+        <Carousel />
+        <div className={styles.list_wrapper}>
+          <MusicList musics={musics} />
+        </div>
+        {isPlay && <Controller />}
+      </Layout>
+    </>
   );
 };
 
