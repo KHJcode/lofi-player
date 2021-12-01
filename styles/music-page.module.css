@@ -1,6 +1,6 @@
 .music_page_wrapper {
   width: 100%;
-  padding: 40px 15px;
+  padding: 50px 15px;
   text-align: center;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .title_wrapper {
-  margin: 0 0 20px;
+  margin: 0 0 50px;
 }
 .title_wrapper .title {
   font-size: 40px;

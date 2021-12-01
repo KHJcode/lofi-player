@@ -4,6 +4,7 @@ import Layout from '../../components/Layout';
 import MusicList from '../../components/MusicList';
 import {findMusicsBySearch} from '../../service/music';
 import {IMusic} from '../../types/music';
+import styles from "../../styles/home.module.css";
 
 const Search: React.FC<{ keyword: string }> = ({keyword}) => {
   const [musics, setMusics] = useState<IMusic[]>([]);
@@ -15,11 +16,15 @@ const Search: React.FC<{ keyword: string }> = ({keyword}) => {
         setMusics(data);
       })();
     }
-  }, []);
+  }, [keyword]);
 
   return (
     <Layout>
-      {musics && <MusicList musics={musics}/>}
+      {musics && (
+        <div className={styles.list_wrapper}>
+          <MusicList musics={musics}/>
+        </div>
+      )}
     </Layout>
   );
 };
