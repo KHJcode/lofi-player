@@ -14,7 +14,6 @@ const Container: React.FC<Props> = ({ children }) => {
 
   const handleKeydown = useCallback((event: any) => {
     if (event.code === 'Space') {
-      event.preventDefault();
       setIsPlay(!isPlay);
     }
   }, [isPlay]);
