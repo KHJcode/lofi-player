@@ -9,16 +9,16 @@ const Header: React.FC = () => {
 
   const router = useRouter();
 
-  const submitSearchHandler = useCallback((e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const submitSearchHandler = useCallback((event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     setKeyword(keyword.trim());
     if (keyword.indexOf('/') === -1) {
       router?.push(`/search/${keyword}`);
     }
   }, [keyword]);
 
-  const changeKeywordHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setKeyword(e.target.value);
+  const changeKeywordHandler = (event: ChangeEvent<HTMLInputElement>) => {
+    setKeyword(event.target.value);
   };
 
   useEffect(() => {

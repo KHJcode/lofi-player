@@ -61,3 +61,7 @@ button {
 .font-nanum {
   font-family: 'Nanum Gothic', sans-serif;
 }
+
+#keydown_event_handler:focus {
+  outline: none;
+}
