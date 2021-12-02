@@ -18,7 +18,6 @@ class MyDocument extends Document {
             content="upgrade-insecure-requests"
           />
 
-          <meta name="author" content="KHJcode" />
           <meta name="copyright" content="© 2021- KHJcode(Hyungjin Kim)" />
           <meta name="theme-color" content="#000000" />
           <meta name="language" content="ko"/>

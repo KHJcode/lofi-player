@@ -27,8 +27,12 @@
     width: 210px;
     height: 38px;
     border-radius: 8px;
-    background: rgba(0, 0, 0, .08);
+    background: rgba(0, 0, 0, .06);
     text-align: center;
+    transition: .3s;
+}
+.text_box:hover {
+    background: rgba(0, 0, 0, 0.08) !important;
 }
 .text_box .text {
     background: none;
