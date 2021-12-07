@@ -46,3 +46,70 @@
   color: var(--color-text-40);
   font-size: 22px;
 }
+
+@media screen and ( max-width: 1000px ) {
+
+  .music_page_wrapper {
+    padding: 50px 15px 0;
+  }
+  
+  .thumbnail {
+    width: 400px;
+    height: 400px;
+  }
+  .thumbnail .dot {
+    width: 150px;
+    height: 150px;
+  }
+
+  .author_wrapper {
+    text-align: center;
+  }
+
+  .author_wrapper .author {
+    font-size: 20px;
+  }
+
+  @media screen and ( max-width: 500px ) {
+
+    .thumbnail {
+      width: 300px;
+      height: 300px;
+    }
+    .thumbnail .dot {
+      width: 120px;
+      height: 120px;
+    }
+
+    .music_info_wrapper {
+      padding: 60px 0 0;
+      width: 100%;
+    }
+
+    @media screen and ( max-width: 400px ) {
+
+      .thumbnail {
+        width: 200px;
+        height: 200px;
+      }
+      .thumbnail .dot {
+        width: 75px;
+        height: 75px;
+      }
+
+      .title_wrapper {
+        margin: 0 0 40px;
+      }
+      .title_wrapper .title {
+        font-size: 35px;
+      }
+
+      .author_wrapper .author {
+        font-size: 18px;
+      }
+
+    }
+
+  }
+
+}
