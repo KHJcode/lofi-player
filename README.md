@@ -5,6 +5,14 @@ Play lofi music from [youtube](https://youtube.com) on website.
 
 <br/>
 
+![home](docs/home.png)
+
+<br/>
+
+![music](docs/music.png)
+
+<br/>
+
 ## 🛠️ Installation
 
 ```bash
