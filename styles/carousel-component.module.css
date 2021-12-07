@@ -42,3 +42,71 @@
   color: rgba(255, 255, 255, .4);
   font-size: 15px;
 }
+
+@media screen and ( max-width: 1000px ) {
+
+  .carousel_wrapper {
+    padding: 10px 25px 50px;
+  }
+
+  .carousel {
+    width: 100%;
+    height: 250px;
+    padding: 35px 15px 15px 35px;
+  }
+
+  .music_title {
+    font-size: 33px;
+    margin: 0 0 25px;
+  }
+
+  .music_recommend_description {
+    font-size: 16px;
+  }
+
+  .moving_text_wrapper {
+    position: static;
+    width: 100px;
+    float: right;
+    margin: 95px 0 0;
+  }
+
+  .moving_text_wrapper .moving_text {
+    font-size: 14px;
+  }
+
+  @media screen and ( max-width: 600px ) {
+    
+    .carousel_wrapper {
+      padding: 10px 25px 35px;
+    }
+
+    @media screen and ( max-width: 500px ) {
+      
+      .carousel_wrapper {
+        padding: 10px 15px 30px;
+      }
+
+      .carousel {
+        height: 200px;
+        padding: 25px 15px 15px 25px;
+      }
+
+      .music_title {
+        font-size: 30px;
+        margin: 0 0 20px;
+      }
+
+      .music_recommend_description {
+        font-size: 14px;
+      }
+
+      .moving_text_wrapper {
+        margin: 68px 0 0;
+      }
+
+    }
+
+  }
+
+}

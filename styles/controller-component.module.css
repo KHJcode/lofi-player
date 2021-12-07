@@ -26,3 +26,12 @@
     font-size: 23px;
     color: var(--color-text-5);
 }
+
+@media screen and ( max-width: 700px ) {
+    
+    .controller {
+        width: 65px;
+        height: 65px;
+    }
+
+}

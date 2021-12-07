@@ -69,3 +69,34 @@
     white-space: nowrap;
     overflow: hidden;
 }
+
+@media screen and ( max-width: 1000px ) {
+
+    .item_wrapper {
+        width: 80px;
+        margin: 30px;
+    }
+
+    .item_box {
+        height: 80px;
+    }
+
+    .title {
+        font-size: 13px;
+        width: 70px;
+    }
+
+    .icon {
+        bottom: 84px;
+        font-size: 28px;
+    }
+
+    @media screen and ( max-width: 600px ) {
+
+        .item_wrapper {
+            margin: 30px 25px;
+        }
+
+    }
+
+}

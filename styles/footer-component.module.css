@@ -32,3 +32,18 @@
 .links_wrapper .icon:hover {
   color: var(--color-text-10);
 }
+
+@media screen and ( max-width: 700px ) {
+
+  .footer {
+    height: 150px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 20px;
+  }
+
+  .links_wrapper {
+    margin: 0 auto;
+  }
+
+}

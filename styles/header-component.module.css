@@ -51,3 +51,25 @@
 .text_box .button .icon {
     color: var(--color-text-70);
 }
+
+@media screen and ( max-width: 500px) {
+
+    .header {
+        height: 60px;
+    }
+    
+    .text_box {
+        padding: 0 13px;
+        width: 150px;
+        height: 35px;
+    }
+
+    .text_box .text {
+        font-size: 13px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+}
