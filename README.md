@@ -5,9 +5,13 @@ Play lofi music from [youtube](https://youtube.com) on website.
 
 <br/>
 
+Home
+
 ![home](docs/home.png)
 
 <br/>
+
+Music
 
 ![music](docs/music.png)
 
