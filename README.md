@@ -12,28 +12,60 @@
 
 <br/>
 
-## 📚 Description
+## Description
 
 Play lofi music from [youtube](https://youtube.com) on website.
-<br/>Do you like Lofi...?
+<br/>Do you like lofi...?
 
 <br/>
 
-## 🛠️ Installation
+## Installation
 
 ```bash
-$ yarn
+# repository
+$ git clone https://github.com/KHJcode/lofi-streaming.git
+$ cd lofi-streaming
+
+# dependencies
+$ yarn install
 ```
 
 <br/>
 
-## 🚀 Running the app
+## Running the app
 
 ```bash
+# format code
+$ yarn lint
+
 # development
 $ yarn dev
 
-# Build First. Production Later
+# build
 $ yarn build
+
+# production
 $ yarn start
 ```
+
+<br/>
+
+## Contributing
+
+Contributions are welcome.
+
+Just run before `yarn lint`.
+
+<br/>
+
+## Contact
+
+[to@khjcode.com](mailto:to@khjcode.com)
+
+If you have any question or need help, feel free to contact me.
+
+<br/>
+
+## License
+
+MIT © [KHJcode](https://github.com/KHJcode)
