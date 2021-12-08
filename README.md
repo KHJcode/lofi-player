@@ -1,19 +1,21 @@
 # Lofi streaming
 
+**Home**
+
+![Home](docs/home.png)
+
+<br/>
+
+**Music**
+
+![Music](docs/music.png)
+
+<br/>
+
+## 📚 Description
+
 Play lofi music from [youtube](https://youtube.com) on website.
 <br/>Do you like Lofi...?
-
-<br/>
-
-Home
-
-![home](docs/home.png)
-
-<br/>
-
-Music
-
-![music](docs/music.png)
 
 <br/>
 
